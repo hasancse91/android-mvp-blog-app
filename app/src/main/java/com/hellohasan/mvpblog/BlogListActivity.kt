@@ -13,7 +13,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.create
 
-class MainActivity : AppCompatActivity() {
+class BlogListActivity : AppCompatActivity() {
 
      private lateinit var binding : ActivityMainBinding
 
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
                 val blogList = response.body()
 
-                val layoutManager = LinearLayoutManager(this@MainActivity)
+                val layoutManager = LinearLayoutManager(this@BlogListActivity)
                 binding.recyclerView.layoutManager = layoutManager
 
                 val adapter = BlogPostRecyclerViewAdapter(blogList!!)
@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<List<BlogResponse>>, t: Throwable) {
-                Toast.makeText(this@MainActivity, t.message, Toast.LENGTH_LONG).show()
+                Toast.makeText(this@BlogListActivity, t.message, Toast.LENGTH_LONG).show()
                 binding.progressBar.isVisible = false
             }
 
