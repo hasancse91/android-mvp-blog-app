@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.text.Html
 import com.bumptech.glide.Glide
 import com.hellohasan.mvpblog.databinding.ActivityBlogDetailsBinding
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 class BlogDetailsActivity : AppCompatActivity() {
 
