@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.text.Html
 import com.bumptech.glide.Glide
 import com.hellohasan.mvpblog.databinding.ActivityBlogDetailsBinding
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 class BlogDetailsActivity : AppCompatActivity() {
 
@@ -21,8 +23,13 @@ class BlogDetailsActivity : AppCompatActivity() {
             .load(blogResponse.jetpackFeaturedMediaUrl)
             .into(binding.imageViewFeatured)
 
+        val inputFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault())
+        val outputFormat = SimpleDateFormat("dd MMM yyyy, hh:mm a", Locale.getDefault())
+
+        val blogModifiedDate = inputFormat.parse(blogResponse.date)
+
         binding.textViewTitle.text = blogResponse.title.rendered
-        binding.textViewDate.text = blogResponse.date
+        binding.textViewDate.text = outputFormat.format(blogModifiedDate!!)
         binding.textViewExcerpt.text = Html.fromHtml(blogResponse.excerpt.rendered, Html.FROM_HTML_MODE_COMPACT)
         binding.textViewContent.text = Html.fromHtml(blogResponse.content.rendered, Html.FROM_HTML_MODE_COMPACT)
     }
