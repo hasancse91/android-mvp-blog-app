@@ -1,11 +1,11 @@
 package com.hellohasan.mvpblog
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.hellohasan.mvpblog.databinding.ActivityMainBinding
+import com.hellohasan.mvpblog.databinding.ActivityBlogListBinding
 import com.hellohasan.mvpblog.network.BlogApiInterface
 import com.hellohasan.mvpblog.network.RetrofitClient
 import retrofit2.Call
@@ -15,11 +15,11 @@ import retrofit2.create
 
 class BlogListActivity : AppCompatActivity() {
 
-     private lateinit var binding : ActivityMainBinding
+    private lateinit var binding: ActivityBlogListBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityBlogListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val blogApiInterface = RetrofitClient.client.create<BlogApiInterface>()
