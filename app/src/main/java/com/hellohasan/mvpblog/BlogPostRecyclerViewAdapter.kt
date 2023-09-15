@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.hellohasan.mvpblog.databinding.ItemBlogPostBinding
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 class BlogPostRecyclerViewAdapter(private val blogPostList: List<BlogResponse>) :
     RecyclerView.Adapter<BlogPostRecyclerViewAdapter.BlogPostViewHolder>() {
@@ -37,8 +39,13 @@ class BlogPostRecyclerViewAdapter(private val blogPostList: List<BlogResponse>) 
                 .load(blogPost.jetpackFeaturedMediaUrl)
                 .into(binding.imageViewFeatured)
 
+            val inputFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault())
+            val outputFormat = SimpleDateFormat("dd MMM yyyy, hh:mm a", Locale.getDefault())
+
+            val blogModifiedDate = inputFormat.parse(blogPost.date)
+
             binding.textViewTitle.text = blogPost.title.rendered
-            binding.textViewModifiedDate.text = blogPost.modified
+            binding.textViewModifiedDate.text = outputFormat.format(blogModifiedDate)
 
             binding.root.setOnClickListener {
                 val intent = Intent(binding.root.context, BlogDetailsActivity::class.java)
