@@ -21,8 +21,13 @@ class BlogDetailsActivity : AppCompatActivity() {
             .load(blogResponse.jetpackFeaturedMediaUrl)
             .into(binding.imageViewFeatured)
 
+        val inputFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault())
+        val outputFormat = SimpleDateFormat("dd MMM yyyy, hh:mm a", Locale.getDefault())
+
+        val blogModifiedDate = inputFormat.parse(blogResponse.date)
+
         binding.textViewTitle.text = blogResponse.title.rendered
-        binding.textViewDate.text = blogResponse.date
+        binding.textViewDate.text = outputFormat.format(blogModifiedDate)
         binding.textViewExcerpt.text = Html.fromHtml(blogResponse.excerpt.rendered, Html.FROM_HTML_MODE_COMPACT)
         binding.textViewContent.text = Html.fromHtml(blogResponse.content.rendered, Html.FROM_HTML_MODE_COMPACT)
     }
