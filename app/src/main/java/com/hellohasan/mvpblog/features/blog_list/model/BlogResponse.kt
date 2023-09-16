@@ -1,4 +1,4 @@
-package com.hellohasan.mvpblog
+package com.hellohasan.mvpblog.features.blog_list.model
 
 import com.google.gson.annotations.SerializedName
 import androidx.annotation.Keep

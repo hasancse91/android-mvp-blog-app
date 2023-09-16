@@ -1,12 +1,13 @@
-package com.hellohasan.mvpblog
+package com.hellohasan.mvpblog.features.blog_list.view
 
 import android.content.Intent
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.hellohasan.mvpblog.features.blog_list.model.BlogResponse
 import com.hellohasan.mvpblog.databinding.ItemBlogPostBinding
+import com.hellohasan.mvpblog.features.blog_details.view.BlogDetailsActivity
 import java.text.SimpleDateFormat
 import java.util.Locale
 

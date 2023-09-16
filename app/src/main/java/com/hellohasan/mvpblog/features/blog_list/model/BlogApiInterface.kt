@@ -1,6 +1,6 @@
-package com.hellohasan.mvpblog.network
+package com.hellohasan.mvpblog.features.blog_list.model
 
-import com.hellohasan.mvpblog.BlogResponse
+import com.hellohasan.mvpblog.features.blog_list.model.BlogResponse
 import retrofit2.Call
 import retrofit2.http.GET
 

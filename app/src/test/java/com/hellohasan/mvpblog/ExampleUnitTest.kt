@@ -12,6 +12,16 @@ import org.junit.Assert.*
 class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+        val pass = "9834u jkdfhFD *"
+        assertEquals(false, isPasswordStrong("3434 %55 45"))
+        assertEquals(true, isPasswordStrong("3434 %55 A 3d45"))
+        assertEquals(false, isPasswordStrong("AAAAAA"))
+        assertEquals(false, isPasswordStrong("aaaaaadfdfdf"))
+        assertEquals(false, isPasswordStrong("3434 %55 45"))
+        assertEquals(false, isPasswordStrong("3434 %55 45"))
     }
+}
+
+fun isPasswordStrong(password: String) : Boolean {
+    return true
 }

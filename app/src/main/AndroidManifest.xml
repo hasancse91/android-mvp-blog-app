@@ -15,7 +15,7 @@
         android:theme="@style/Theme.AndroidMVPBlogApp"
         tools:targetApi="31">
         <activity
-            android:name=".BlogListActivity"
+            android:name=".features.blog_list.view.BlogListActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-        android:name=".BlogDetailsActivity"
+        android:name=".features.blog_details.view.BlogDetailsActivity"
         android:exported="false" />
     </application>
 
