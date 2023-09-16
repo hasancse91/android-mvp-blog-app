@@ -1,6 +1,6 @@
-package com.hellohasan.mvpblog.features.blog_list.model
+package com.hellohasan.mvpblog.features.blog_list.model.remote
 
-import com.hellohasan.mvpblog.features.blog_list.model.BlogResponse
+import com.hellohasan.mvpblog.features.blog_list.model.data.BlogResponse
 import retrofit2.Call
 import retrofit2.http.GET
 

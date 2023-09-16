@@ -1,5 +1,7 @@
 package com.hellohasan.mvpblog.features.blog_list.model
 
+import com.hellohasan.mvpblog.features.blog_list.model.data.BlogResponse
+import com.hellohasan.mvpblog.features.blog_list.model.remote.BlogApiInterface
 import com.hellohasan.mvpblog.network.RetrofitClient
 import retrofit2.Call
 import retrofit2.Callback

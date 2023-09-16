@@ -6,8 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hellohasan.mvpblog.databinding.ActivityBlogListBinding
-import com.hellohasan.mvpblog.features.blog_list.model.BlogItemUiModel
-import com.hellohasan.mvpblog.features.blog_list.model.BlogResponse
+import com.hellohasan.mvpblog.features.blog_list.model.data.BlogItemUiModel
 import com.hellohasan.mvpblog.features.blog_list.presenter.BlogListPresenter
 import com.hellohasan.mvpblog.features.blog_list.presenter.BlogListPresenterImpl
 

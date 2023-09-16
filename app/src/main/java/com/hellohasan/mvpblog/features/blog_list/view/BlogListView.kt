@@ -1,7 +1,6 @@
 package com.hellohasan.mvpblog.features.blog_list.view
 
-import com.hellohasan.mvpblog.features.blog_list.model.BlogItemUiModel
-import com.hellohasan.mvpblog.features.blog_list.model.BlogResponse
+import com.hellohasan.mvpblog.features.blog_list.model.data.BlogItemUiModel
 
 interface BlogListView {
     fun showLoader(shouldShow: Boolean)

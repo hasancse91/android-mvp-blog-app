@@ -1,4 +1,4 @@
-package com.hellohasan.mvpblog.features.blog_list.model
+package com.hellohasan.mvpblog.features.blog_list.model.data
 
 import java.io.Serializable
 

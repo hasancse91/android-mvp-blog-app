@@ -4,11 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
 import com.bumptech.glide.Glide
-import com.hellohasan.mvpblog.features.blog_list.model.BlogResponse
 import com.hellohasan.mvpblog.databinding.ActivityBlogDetailsBinding
-import com.hellohasan.mvpblog.features.blog_list.model.BlogItemUiModel
-import java.text.SimpleDateFormat
-import java.util.Locale
+import com.hellohasan.mvpblog.features.blog_list.model.data.BlogItemUiModel
 
 class BlogDetailsActivity : AppCompatActivity() {
 

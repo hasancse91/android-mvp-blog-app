@@ -1,9 +1,9 @@
 package com.hellohasan.mvpblog.features.blog_list.presenter
 
-import com.hellohasan.mvpblog.features.blog_list.model.BlogItemUiModel
+import com.hellohasan.mvpblog.features.blog_list.model.data.BlogItemUiModel
 import com.hellohasan.mvpblog.features.blog_list.model.BlogListModel
 import com.hellohasan.mvpblog.features.blog_list.model.BlogListModelImpl
-import com.hellohasan.mvpblog.features.blog_list.model.BlogResponse
+import com.hellohasan.mvpblog.features.blog_list.model.data.BlogResponse
 import com.hellohasan.mvpblog.features.blog_list.model.ModelCallback
 import com.hellohasan.mvpblog.features.blog_list.view.BlogListView
 import java.text.SimpleDateFormat
