@@ -6,6 +6,7 @@ import android.text.Html
 import com.bumptech.glide.Glide
 import com.hellohasan.mvpblog.features.blog_list.model.BlogResponse
 import com.hellohasan.mvpblog.databinding.ActivityBlogDetailsBinding
+import com.hellohasan.mvpblog.features.blog_list.model.BlogItemUiModel
 import java.text.SimpleDateFormat
 import java.util.Locale
 
@@ -18,20 +19,15 @@ class BlogDetailsActivity : AppCompatActivity() {
         binding = ActivityBlogDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val blogResponse = intent.getSerializableExtra("blog") as BlogResponse
+        val blogResponse = intent.getSerializableExtra("blog") as BlogItemUiModel
 
         Glide.with(binding.imageViewFeatured)
-            .load(blogResponse.jetpackFeaturedMediaUrl)
+            .load(blogResponse.imageUrl)
             .into(binding.imageViewFeatured)
 
-        val inputFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault())
-        val outputFormat = SimpleDateFormat("dd MMM yyyy, hh:mm a", Locale.getDefault())
-
-        val blogModifiedDate = inputFormat.parse(blogResponse.date)
-
-        binding.textViewTitle.text = blogResponse.title.rendered
-        binding.textViewDate.text = outputFormat.format(blogModifiedDate!!)
-        binding.textViewExcerpt.text = Html.fromHtml(blogResponse.excerpt.rendered, Html.FROM_HTML_MODE_COMPACT)
-        binding.textViewContent.text = Html.fromHtml(blogResponse.content.rendered, Html.FROM_HTML_MODE_COMPACT)
+        binding.textViewTitle.text = blogResponse.title
+        binding.textViewDate.text = blogResponse.date
+        binding.textViewExcerpt.text = Html.fromHtml(blogResponse.excerpt, Html.FROM_HTML_MODE_COMPACT)
+        binding.textViewContent.text = Html.fromHtml(blogResponse.content, Html.FROM_HTML_MODE_COMPACT)
     }
 }

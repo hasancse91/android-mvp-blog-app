@@ -8,10 +8,11 @@ import com.bumptech.glide.Glide
 import com.hellohasan.mvpblog.features.blog_list.model.BlogResponse
 import com.hellohasan.mvpblog.databinding.ItemBlogPostBinding
 import com.hellohasan.mvpblog.features.blog_details.view.BlogDetailsActivity
+import com.hellohasan.mvpblog.features.blog_list.model.BlogItemUiModel
 import java.text.SimpleDateFormat
 import java.util.Locale
 
-class BlogPostRecyclerViewAdapter(private val blogPostList: List<BlogResponse>) :
+class BlogPostRecyclerViewAdapter(private val blogList: List<BlogItemUiModel>) :
     RecyclerView.Adapter<BlogPostRecyclerViewAdapter.BlogPostViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BlogPostViewHolder {
@@ -24,29 +25,24 @@ class BlogPostRecyclerViewAdapter(private val blogPostList: List<BlogResponse>) 
     }
 
     override fun onBindViewHolder(holder: BlogPostViewHolder, position: Int) {
-        val blogPost = blogPostList[position]
+        val blogPost = blogList[position]
         holder.bind(blogPost)
     }
 
     override fun getItemCount(): Int {
-        return blogPostList.size
+        return blogList.size
     }
 
     inner class BlogPostViewHolder(private val binding: ItemBlogPostBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(blogPost: BlogResponse) {
+        fun bind(blogPost: BlogItemUiModel) {
             Glide.with(itemView)
-                .load(blogPost.jetpackFeaturedMediaUrl)
+                .load(blogPost.imageUrl)
                 .into(binding.imageViewFeatured)
 
-            val inputFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault())
-            val outputFormat = SimpleDateFormat("dd MMM yyyy, hh:mm a", Locale.getDefault())
-
-            val blogModifiedDate = inputFormat.parse(blogPost.date)
-
-            binding.textViewTitle.text = blogPost.title.rendered
-            binding.textViewModifiedDate.text = outputFormat.format(blogModifiedDate)
+            binding.textViewTitle.text = blogPost.title
+            binding.textViewModifiedDate.text = blogPost.date
 
             binding.root.setOnClickListener {
                 val intent = Intent(binding.root.context, BlogDetailsActivity::class.java)
