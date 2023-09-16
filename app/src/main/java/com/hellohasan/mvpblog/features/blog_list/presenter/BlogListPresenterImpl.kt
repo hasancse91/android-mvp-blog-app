@@ -9,28 +9,32 @@ import com.hellohasan.mvpblog.features.blog_list.view.BlogListView
 import java.text.SimpleDateFormat
 import java.util.Locale
 
-class BlogListPresenterImpl(private val view: BlogListView) : BlogListPresenter {
+class BlogListPresenterImpl(private var view: BlogListView?) : BlogListPresenter {
 
     private val model: BlogListModel = BlogListModelImpl()
 
     override fun fetchBlogList() {
 
-        view.showLoader(true)
+        view?.showLoader(true)
 
         model.getBlogList(object : ModelCallback{
             override fun onSuccess(blogResponseList: List<BlogResponse>) {
                 val blogListUiModel = getBlogUiModelList(blogResponseList)
-                view.showBlogList(blogListUiModel)
+                view?.showBlogList(blogListUiModel)
 
-                view.showLoader(false)
+                view?.showLoader(false)
             }
 
             override fun onError(error: String) {
-                view.showError(error)
-                view.showLoader(false)
+                view?.showError(error)
+                view?.showLoader(false)
             }
         })
 
+    }
+
+    override fun onViewDetached() {
+        view = null
     }
 
     private fun getBlogUiModelList(blogResponseList: List<BlogResponse>) : List<BlogItemUiModel> {

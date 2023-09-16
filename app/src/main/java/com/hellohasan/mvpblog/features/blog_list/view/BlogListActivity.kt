@@ -24,6 +24,11 @@ class BlogListActivity : AppCompatActivity(), BlogListView {
         presenter.fetchBlogList()
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.onViewDetached()
+    }
+
     override fun showLoader(shouldShow: Boolean) {
         binding.progressBar.isVisible = shouldShow
     }
