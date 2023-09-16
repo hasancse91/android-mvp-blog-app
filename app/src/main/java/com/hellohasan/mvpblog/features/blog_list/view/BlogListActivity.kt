@@ -8,6 +8,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.hellohasan.mvpblog.features.blog_list.model.BlogResponse
 import com.hellohasan.mvpblog.databinding.ActivityBlogListBinding
 import com.hellohasan.mvpblog.features.blog_list.model.BlogApiInterface
+import com.hellohasan.mvpblog.features.blog_list.model.BlogListModel
+import com.hellohasan.mvpblog.features.blog_list.model.BlogListModelImpl
+import com.hellohasan.mvpblog.features.blog_list.presenter.BlogListPresenter
+import com.hellohasan.mvpblog.features.blog_list.presenter.BlogListPresenterImpl
 import com.hellohasan.mvpblog.network.RetrofitClient
 import retrofit2.Call
 import retrofit2.Callback
@@ -17,13 +21,17 @@ import retrofit2.create
 class BlogListActivity : AppCompatActivity(), BlogListView {
 
     private lateinit var binding: ActivityBlogListBinding
+    private lateinit var presenter: BlogListPresenter
+    private lateinit var model: BlogListModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityBlogListBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        model = BlogListModelImpl()
+        presenter = BlogListPresenterImpl(this, model)
 
-
+        presenter.fetchBlogList()
     }
 
     override fun showLoader(shouldShow: Boolean) {
