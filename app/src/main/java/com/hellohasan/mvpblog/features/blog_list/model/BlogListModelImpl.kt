@@ -37,4 +37,5 @@ class BlogListModelImpl : BlogListModel {
         })
 
     }
+
 }
