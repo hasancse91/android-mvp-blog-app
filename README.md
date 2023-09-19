@@ -2,6 +2,10 @@
 
 Welcome to the Android MVP Blog Reading App repository! This project is a hands-on example of building a Blog Reading App using the Model-View-Presenter (MVP) architectural pattern. Dive into this practical project to enhance your Android development skills and get a taste of what you'll learn in the [Android MVP Architecture Course (Bengali)](http://learning.megaminds.technology/courses/android-mvp-architecture/details). You can watch the course introduction and outline from [here](https://youtu.be/25OlyPGyZKU).
 
+
+https://github.com/hasancse91/android-mvp-blog-app/assets/3769029/833abf3a-a1a9-4bab-870c-c18b89f04ccb
+
+
 ## Table of Contents
 
 - [Project Overview](#project-overview)
@@ -54,7 +58,7 @@ The MVP architecture brings several benefits, including improved code maintainab
 
 ## Screenshots
 
-![Screenshot 1](screenshots/screenshot1.png)
+![Screenshot 1]([screenshots/screenshot1.png](https://github.com/hasancse91/android-mvp-blog-app/raw/master/app_demo.mp4))
 ![Screenshot 2](screenshots/screenshot2.png)
 
 ---
