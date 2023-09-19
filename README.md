@@ -11,7 +11,7 @@ Welcome to the Android MVP Blog Reading App repository! This project is a hands-
 - [MVP Architecture](#mvp-architecture)
 - [Screenshots](#screenshots)
 
-##Project Overview
+## Project Overview
 
 The Android MVP Blog Reading App showcases how to structure and build an Android app using MVP architecture. As you explore this repository, you'll gain practical insights into clean code, separation of concerns, and best practices in Android app development.
 
